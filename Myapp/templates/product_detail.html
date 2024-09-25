@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <!-- Small Images Column -->
+        <div class="col-md-2">
+            <div class="d-flex flex-column">
+                {% for image in product.images.all %}
+                <img src="{{ image.url }}" alt="{{ product.name }}" class="img-thumbnail mb-2 small-img"
+                    style="cursor:pointer;" onclick="changeImage('{{ image.url }}')">
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Big Image and Details Column -->
+        <div class="col-md-7 text-center">
+            <img id="bigImage" src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid mb-3"
+                style="max-width: 100%; height: auto; max-height: 500px;">
+        </div>
+
+        <!-- Product Information -->
+        <div class="col-md-3">
+            <h5>{{ product.name }}</h5>
+            <p>{{ product.description }}</p>
+            <p><strong>Price: ₹{{ product.price }}</strong></p>
+            <p>Stock: {{ product.stock }}</p>
+            <div class="d-grid gap-2">
+                <a href="#" class="btn btn-primary btn-lg"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+                <a href="#" class="btn btn-warning btn-lg"><i class="fa-solid fa-bolt"></i> Buy Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="row mt-5">
+        <h5>Related Products</h5>
+        <div class="row">
+            {% for related_product in product.category.products.all|slice:"0:5" %}
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="{{ related_product.image.url }}" alt="{{ related_product.name }}" class="card-img-top">
+                    <div class="card-body">
+                        <h6 class="card-title">{{ related_product.name }}</h6>
+                        <a href="{% url 'product_detail' related_product.id %}" class="btn btn-primary btn-sm">View
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function changeImage(url) {
+        document.getElementById('bigImage').src = url;
+    }
+</script>
+{% endblock %}

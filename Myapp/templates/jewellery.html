@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{%load static%}
+
+{% block title%}Jewellery{% endblock %}
+
+{%block content%}
+
+<div class="container text-center my-4 py-4">
+    <h1 class="mb-4">Jewellery</h1>
+    
+    <div class="row justify-content-around">
+        {% for product in Jewellery_products %}
+        <div class="col-md-3 mb-4 my-5">
+            <div class="card mb-4">
+                {% if product.image %}  
+                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text"><strong>Price:</strong> {{ product.price }}</p>
+                    <a href="{%url 'product_detail' product.id%}" class="btn btn-success">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+<ul class="messages bg-success text-white">
+  {% for message in messages %}
+  <li{% if message.tags %} class="{{ `message.tags }}" {% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<div class="container " style="width:800px">
+  <form method="POST" action="{% url 'register_user' %}" class="form-control py-3 my-5 ">
+    {% csrf_token %}
+    <h1 class="text-center">Create new account</h1>
+
+    <div class="container mt-4">
+      <label>Email Address :</label>
+      <input type="text" name="email" class="form-control my-2">
+    </div>
+
+    <div class="container">
+      <label>Firstname :</label>
+      <input type="text" name="firstname" class="form-control my-2">
+    </div>
+
+    <div class="container">
+      <label>Lastname :</label>
+      <input type="text" name="lastname" class="form-control my-2">
+    </div>
+
+    <div class="container">
+      <label>Password :</label>
+      <input type="password" name="password" class="form-control my-2">
+    </div>
+
+    <div class="d-flex justify-content-center my-3">
+      <input type="submit" name="submit" class="btn btn-success py-0 px-6 border-radius-0" value="Create account">
+      <button class="btn"> OR </button>
+      <a href="https://accounts.google.com/gsi/select?client_id=49625052041-kgt0hghf445lmcmhijv46b715m2mpbct.apps.googleusercontent.com&ux_mode=popup&ui_mode=card&as=RQdaK3ptigqtRnW7hxwJ7A&channel_id=9c38e0d431bb41f61fcdb5838c76e81228dece41d4ba74e242b5d3e3de21780d&origin=https%3A%2F%2Fx.com"><img src="{% static 'images/google.png' %}" height="20px" width="20px" /></a>
+    </div>
+  </form>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,213 @@
+{% extends 'base.html' %}
+
+{%load static%}
+
+{% block title%}Home{% endblock %}
+
+{%block content%}
+
+<div class="container-fluid">
+    <video class="w-100" autoplay muted loop>
+        <source src="{% static 'videos/invideo.mp4' %}" type="video/mp4">
+    </video>
+
+</div>
+
+<div class="container trends-section text-center">
+    <h2 class="py-4">Please select your preffered category</h2>
+    <div class="row justify-content-center">
+        <div class="col-6 col-sm-4 col-md-2 trend-item">
+            <img src="{% static 'images/IT mart.jpg' %}" alt="IT Mart">
+            <p>IT Mart</p>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 trend-item">
+            <img src="{% static 'images/homedecor.jpeg' %}" alt="Lensmart">
+            <p>Home Decor</p>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 trend-item">
+            <img src="{% static 'images/cosmetics.jpeg' %}" alt="Cosmetics">
+            <p>Cosmetics Mart</p>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 trend-item">
+            <img src="{% static 'images/Shoe.jpeg' %}" alt="">
+            <p>Shoe Mart</p>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 trend-item">
+            <img src="{% static 'images/purse.jpg'%}" alt="">
+            <p>Women bags</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container my-4">
+    <h2 class="text-center mb-4">Our Best Deals</h2>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 mb-4 hover" data-aos="zoom-in-up" data-aos-delay="200">
+            <a href="{% url 'makeup' %}" class="text-decoration-none">
+                <div class="card h-100 d-flex flex-column">
+                    <img src="{% static 'images/cosmetics.jpeg' %}" class="card-img-top" alt="Makeup">
+                    <div class="card-body d-flex flex-column flex-grow-1">
+                        <h5 class="card-title">Foundation and Concealer Sets</h5>
+                        <p class="card-text">Get the perfect blend with <strong>Brand X</strong>.</p>
+                        <p class="card-text"><strong>Price:</strong> $29.99</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-lg-2 col-md-4 mb-4 hover" data-aos="zoom-in-up" data-aos-delay="200">
+            <a href="#" class="text-decoration-none">
+                <div class="card h-100 d-flex flex-column">
+                    <img src="{% static 'images/purse.jpg' %}" class="card-img-top" alt="Lady Bags">
+                    <div class="card-body d-flex flex-column flex-grow-1">
+                        <h5 class="card-title">Designer Handbags</h5>
+                        <p class="card-text">Stylish bags from <strong>Brand Y</strong>.</p>
+                        <p class="card-text"><strong>Price:</strong> $89.99</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-lg-2 col-md-4 mb-4 hover" data-aos="zoom-in-up" data-aos-delay="200">
+            <a href="link_to_clothing_product" class="text-decoration-none">
+                <div class="card h-100 d-flex flex-column">
+                    <img src="{% static 'images/clothing.jpg' %}" class="card-img-top" alt="Clothing">
+                    <div class="card-body d-flex flex-column flex-grow-1">
+                        <h5 class="card-title">Seasonal Fashion</h5>
+                        <p class="card-text">Trendy outfits by <strong>BRAND z</strong>.</p>
+                        <p class="card-text"><strong>Price:</strong> $49.99</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-lg-2 col-md-4 mb-4 hover" data-aos="zoom-in-up" data-aos-delay="200">
+            <a href="electronicgadgets.html" class="text-decoration-none">
+                <div class="card h-100 d-flex flex-column">
+                    <img src="{% static 'images/smrt.jpg' %}" class="card-img-top" alt="Electronic Gadgets">
+                    <div class="card-body d-flex flex-column flex-grow-1">
+                        <h5 class="card-title">Smartphones</h5>
+                        <p class="card-text">Latest models by <strong>Brand A</strong>.</p>
+                        <p class="card-text"><strong>Price:</strong> $ 499</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-lg-2 col-md-4 mb-4 hover" data-aos="zoom-in-up" data-aos-delay="200">
+            <a href="link_to_footwear_product" class="text-decoration-none">
+                <div class="card h-100 d-flex flex-column">
+                    <img src="{% static 'images/sneaker.jpg' %}" class="card-img-top" alt="Footwear">
+                    <div class="card-body d-flex flex-column flex-grow-1">
+                        <h5 class="card-title">Sneakers</h5>
+                        <p class="card-text">Special discounts on popular sneakers by <strong>Brand B</strong>.</p>
+                        <p class="card-text"><strong>Price:</strong> $79.99</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-lg-2 col-md-4 mb-4 hover" data-aos="zoom-in-up" data-aos-delay="200">
+            <a href="link_to_extra_product" class="text-decoration-none">
+                <div class="card h-100 d-flex flex-column">
+                    <img src="{% static 'images/imgcat1.jpg' %}" class="card-img-top" alt="Extra Product">
+                    <div class="card-body d-flex flex-column flex-grow-1">
+                        <h5 class="card-title">Extra Product</h5>
+                        <p class="card-text">Exclusive offer from <strong>Brand C</strong>.</p>
+                        <p class="card-text"><strong>Price:</strong> $59.99</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- templates/category_list.html -->
+
+<div class="container cat2 text-center my-5">
+    <h1 class="mb-4">Shop our popular Categories</h1>
+    <div class="row justify-content-around">
+        {% for category in categories|slice:":5" %}
+
+        <div class="col-md-2 text-center mb-4 hover" data-aos="flip-left" data-aos-delay="400">
+            <a href="#">
+                {% if category.image %}
+                <img src="{{ category.image.url }}" alt="{{ category.name }}"
+                    style="object-fit: cover; width: 100%; height: 150px; border-radius: 10px;">
+                {% endif %}
+                <h5>{{ category.name}}</h5>
+                <p>{{ category.description }}</p>
+            </a>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+<!-- Product Card Template -->
+
+<div class="row py-4 my-5 text-center">
+    <h1>Our Trending Products</h1>
+    {% for product in products %}
+    <div class="col-md-2 my-4">
+        <div class="card mb-3">
+            <!-- Link to product detail page using product.id -->
+            <a href="{% url 'product_detail' product.id %}">
+                <img src="{{ product.image.url }}" class="card-img" alt="{{ product.name }}">
+            </a>
+            <div class="card-body">
+                <!-- Make the product title clickable as well -->
+                <h5 class="card-title">
+                    <a href="{% url 'product_detail' product.id %}">{{ product.name }} ({{ product.category.name }})</a>
+                </h5>
+                <p class="card-text">Price: {{ product.price }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+<div class="row justify-content-around">
+    {% for product in makeup_products %}
+    <div class="col-md-3 mb-4">
+        <div class="card">
+            <img src="{{ product.image.url}}" class="card-img-top" alt="{{ product.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p>
+                <a href="{% url 'product_detail' product.id %}" class="btn btn-success">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="row justify-content-around">
+    {% for product in Jewellery_products %}
+    <div class="col-md-3 mb-4 my-5">
+        <div class="card my-4">
+            {% if product.image %}  
+            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <p class="card-text"><strong>Price:</strong> {{ product.price }}</p>
+                <a href="{%url 'product_detail' product.id%}" class="btn btn-success">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+
+
+
+{%endblock%}

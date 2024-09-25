@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+<br><br><br>
+{% load static %}
+
+{% block content %}
+<!-- Login page start -->
+
+{% if messages %}
+  <ul class="messages bg-success text-white">
+    {% for message in messages %}
+     {{message}}
+    {% endfor %}
+  </ul>
+{% endif %}
+<div class="loginpage container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-8">
+            <form method="POST" action="" class="form-control py-2">
+                {% csrf_token %}
+
+                <h1 class="text-center">Log in</h1>
+
+                <div class="container">
+                    <label>Email Address :</label>
+                    <input type="text" name="email" class="form-control my-2">
+                </div>
+                <div class="container">
+                    <label>Password :</label>
+                    <input type="text" name="password" class="form-control my-2">
+                </div>
+                            
+
+            <div class="d-flex justify-content-center my-3">
+                <button type="submit" name="submit" class="btn btn-primary px-4">Sign in</button>
+            </div> 
+
+            <div class="d-flex justify-content-center my-3">
+                <span>Not a user?</span>
+                &nbsp;
+                <a href="{%url 'register'%}" class="btn  py-0 px-3 border-radius-0" style="border:solid 2px black">Register</a>
+            </div>
+        </form>
+        </div>
+    </div>
+</div><br><br>
+<!-- Login form end -->
+
+{% endblock %}
